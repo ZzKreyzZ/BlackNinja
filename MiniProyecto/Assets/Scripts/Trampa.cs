@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System;
 
 
 public class Trampa : MonoBehaviour
@@ -20,6 +21,8 @@ public class Trampa : MonoBehaviour
 
     
 
+
+   
 
     private void Update()
     {
@@ -54,30 +57,31 @@ public class Trampa : MonoBehaviour
             }
         }
 
-        if (other.gameObject.TryGetComponent(out DestruirJugador destruirJugador))
-        {
-            destruirJugador.TomarDano();
-        } 
+       
     }
 
     private IEnumerator EsperarEnSuelo()
     {
         yield return new WaitForSeconds(timepoEspera);
-        estaSubiendo = true ;
+        estaSubiendo = true;
     }
 
-    
+
+
 
 
     public void OnDrawGizmos()
-    
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(transform.position, transform.position + Vector3.down * distanciaLinea);
-    
-        }
 
-    
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * distanciaLinea);
 
+    }
+    
+    
 }
+
+
+
+        
 

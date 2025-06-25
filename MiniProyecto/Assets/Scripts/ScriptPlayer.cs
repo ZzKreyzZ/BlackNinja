@@ -17,6 +17,7 @@ public class Movimiento : MonoBehaviour
     private bool recibiendoDano;
     private bool atacando;
     public bool muerto;
+    public bool muere;
 
 
     private Rigidbody2D rb;
@@ -36,6 +37,7 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (!muerto)
         {
             if (!atacando)

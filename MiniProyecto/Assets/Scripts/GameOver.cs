@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] private GameObject menuGmaeOver;
+    [SerializeField] private GameObject menuGameOver;
 
     private Movimiento movimiento;
 
@@ -18,7 +18,7 @@ public class GameOver : MonoBehaviour
 
     private void ActivarMenu(object sender, EventArgs e)
     {
-        menuGmaeOver.SetActive(true);
+        menuGameOver.SetActive(true);
     }
 
         
