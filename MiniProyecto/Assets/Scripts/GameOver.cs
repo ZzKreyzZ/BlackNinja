@@ -18,6 +18,7 @@ public class GameOver : MonoBehaviour
 
     private void ActivarMenu(object sender, EventArgs e)
     {
+        Debug.Log("Evento de muerte recibido - mostrando menú");
         menuGameOver.SetActive(true);
     }
 

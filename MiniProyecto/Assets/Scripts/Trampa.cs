@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 
 public class Trampa : MonoBehaviour
@@ -19,10 +20,10 @@ public class Trampa : MonoBehaviour
 
     public Animator animator;
 
-    
-
 
    
+
+
 
     private void Update()
     {
@@ -56,8 +57,16 @@ public class Trampa : MonoBehaviour
                 StartCoroutine(EsperarEnSuelo());
             }
         }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Movimiento jugador = other.gameObject.GetComponent<Movimiento>();
+            if (jugador != null)
+            {
+                jugador.recibeDano(transform.position, 10); // Aplica 1 de daño desde la posición de la trampa
+            }
+        }
 
-       
+
     }
 
     private IEnumerator EsperarEnSuelo()
@@ -80,8 +89,3 @@ public class Trampa : MonoBehaviour
     
     
 }
-
-
-
-        
-

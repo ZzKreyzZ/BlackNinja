@@ -99,7 +99,14 @@ public class Movimiento : MonoBehaviour
             if (vida <= 0)
             {
                 muerto = true;
+                Debug.Log("Jugador ha muerto");
                 MuerteJugador?.Invoke(this, EventArgs.Empty);
+                Invoke("DestruirJugador", 0.5f);  // espera medio segundo
+
+            }
+
+            void DestruirJugador()
+            {
                 Destroy(gameObject);
             }
             if (!muerto)
